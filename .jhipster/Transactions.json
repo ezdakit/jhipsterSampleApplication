@@ -1,0 +1,34 @@
+{
+    "name": "Transactions",
+    "fields": [
+        {
+            "fieldName": "trxId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trxType",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "device",
+            "otherEntityName": "devices",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180718154736",
+    "entityTableName": "transactions",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "myPrueba"
+}

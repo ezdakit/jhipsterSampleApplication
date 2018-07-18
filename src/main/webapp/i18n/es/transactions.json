@@ -1,0 +1,25 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "transactions" : {
+            "home": {
+                "title": "Transactions",
+                "createLabel": "Crear nuevo Transactions",
+                "createOrEditLabel": "Crear o editar Transactions",
+                "search": "Search for Transactions"
+            },
+            "created": "Un nuevo Transactions ha sido creado con el identificador {{ param }}",
+            "updated": "Un Transactions ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Transactions ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Transactions {{ id }}?"
+            },
+            "detail": {
+                "title": "Transactions"
+            },
+            "trxId": "Trx Id",
+            "trxType": "Trx Type",
+            "device": "Device"
+        }
+    }
+}

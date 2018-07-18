@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transactions-my-prueba-heading" jhiTranslate="jhipsterSampleApplicationApp.transactions.home.createOrEditLabel">Create or edit a Transactions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transactions.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transactions.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transactions.trxId" for="field_trxId">Trx Id</label>
+                    <input type="text" class="form-control" name="trxId" id="field_trxId"
+                        [(ngModel)]="transactions.trxId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transactions.trxType" for="field_trxType">Trx Type</label>
+                    <input type="number" class="form-control" name="trxType" id="field_trxType"
+                        [(ngModel)]="transactions.trxType" required/>
+                    <div [hidden]="!(editForm.controls.trxType?.dirty && editForm.controls.trxType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.trxType?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.trxType?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transactions.device" for="field_device">Device</label>
+                    <select class="form-control" id="field_device" name="device" [(ngModel)]="transactions.deviceId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="devicesOption.id" *ngFor="let devicesOption of devices; trackBy: trackDevicesById">{{devicesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
