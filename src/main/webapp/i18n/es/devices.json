@@ -1,0 +1,23 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "devices" : {
+            "home": {
+                "title": "Devices",
+                "createLabel": "Crear nuevo Devices",
+                "createOrEditLabel": "Crear o editar Devices",
+                "search": "Search for Devices"
+            },
+            "created": "Un nuevo Devices ha sido creado con el identificador {{ param }}",
+            "updated": "Un Devices ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Devices ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Devices {{ id }}?"
+            },
+            "detail": {
+                "title": "Devices"
+            },
+            "deviceName": "Device Name"
+        }
+    }
+}
