@@ -1,0 +1,23 @@
+entity Devices {
+	deviceName String
+    deviceId Integer required minlength(6) maxlength(6)
+}
+
+entity Transactions {
+	trxId String
+    trxType Integer required minlength(3) maxlength(3)
+}
+
+relationship ManyToOne {
+	Transactions{device} to Devices
+}
+
+
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with myPrueba
